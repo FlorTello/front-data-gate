@@ -1,0 +1,23 @@
+@import '../../../assets/variables/color';
+
+.mat-toolbar {
+  min-height: 7vh;
+  border-bottom: 1px solid $grey-20;
+  color: $primary;
+  span.brand {
+    color: $accent;
+  }
+}
+
+.mat-sidenav-container {
+  min-height: 93vh !important;
+  min-width: 80vw !important;
+  width: 80vw !important;
+  margin-left: 10%;
+  background: #fff;
+}
+
+.active {
+  background: $primary;
+  color: #fff;
+}

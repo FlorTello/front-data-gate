@@ -1,0 +1,69 @@
+<form [formGroup]="formEdit">
+  <section fxLayout="column" fxLayoutGap="1rem">
+    <div
+      fxLayout="row-reverse"
+      fxLayout.xs="column"
+      fxLayoutAlign="space-between center"
+      fxLayoutAlign.xs="start start"
+    >
+      <button mat-raised-button (click)="updateManage()">
+        <mat-icon>save</mat-icon>
+        Save
+      </button>
+      <div fxLayout="column" fxLayoutGap="0.5rem">
+        <label for="keyName">keyName</label>
+        <input type="text" class="input-style" formControlName="keyName" />
+      </div>
+    </div>
+    <div fxLayout="column" fxLayoutGap="0.5rem">
+      <label for="description">description</label>
+      <textarea
+        cols="30"
+        rows="3"
+        class="input-style"
+        formControlName="description"
+      ></textarea>
+    </div>
+
+    <div fxLayout="column" fxLayoutGap="0.5rem">
+      <label for="type">type</label>
+
+      <select class="input-style" formControlName="type">
+        <option value="integer">integer</option>
+        <option value="string">string</option>
+        <option value="boolean">boolean</option>
+        <option value="array">array</option>
+        <option value="null">null</option>
+      </select>
+    </div>
+    <div>
+      <mat-checkbox formControlName="sensitivity" color="primary">
+        {{ selectedManage.sensitivity['question'] }}
+      </mat-checkbox>
+    </div>
+  </section>
+  <h2 class="banner-title">
+    Possible values
+  </h2>
+  <section>
+    <table style="width:100%">
+      <tr>
+        <th>Value</th>
+        <th>Description</th>
+      </tr>
+      <tr *ngFor="let possibleValue of selectedManage.possibleValues">
+        <td>
+          {{ possibleValue.value }}
+        </td>
+        <td>
+          {{ possibleValue.description }}
+        </td>
+      </tr>
+    </table>
+
+    <button mat-stroked-button>
+      <mat-icon>add</mat-icon>
+      Add possible value
+    </button>
+  </section>
+</form>

@@ -1,0 +1,32 @@
+@import '../../../../../assets/variables/color';
+
+:root {
+  width: 100%;
+}
+
+table {
+  width: 100%;
+}
+
+div.status {
+  color: white;
+  padding: 6px 12px;
+  border-radius: 4px;
+  width: 4rem;
+  text-align: center;
+}
+
+.status-pending {
+  background: $accent;
+  padding: 1px;
+}
+
+.status-denied {
+  background: $warn;
+  padding: 1px;
+}
+
+.status-approved {
+  background: $primary;
+  padding: 1px;
+}

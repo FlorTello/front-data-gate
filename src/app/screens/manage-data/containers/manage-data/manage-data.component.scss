@@ -1,0 +1,30 @@
+@import '../../../../../assets/variables/color';
+
+:host {
+  width: 100%;
+}
+
+.active {
+  background: $primary;
+
+  mat-icon {
+    color: white;
+  }
+}
+
+.manage-list {
+  background: $accent;
+  color: white;
+  a {
+    text-align: left;
+  }
+}
+
+::ng-deep mat-icon {
+  vertical-align: text-top !important ;
+  font-size: 1rem !important;
+}
+
+mat-card {
+  min-height: 10vh;
+}

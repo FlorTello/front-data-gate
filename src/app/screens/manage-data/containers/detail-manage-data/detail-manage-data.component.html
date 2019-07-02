@@ -1,0 +1,40 @@
+<section>
+  <div fxLayout="row" fxLayoutAlign="space-between center">
+    <h2>{{ selectedManage.keyName }}</h2>
+    <a mat-raised-button [routerLink]="['/manage/edit', selectedManage.id]">
+      <mat-icon>edit</mat-icon>
+      Edit this
+    </a>
+  </div>
+  <div>
+    <h3>description</h3>
+    <p>{{ selectedManage.description }}</p>
+  </div>
+
+  <div>
+    <h3>type</h3>
+    <p>{{ selectedManage.type }}</p>
+  </div>
+  <div>
+    <h3>Sensivity</h3>
+    <p>{{ selectedManage.sensitivity['description'] }}</p>
+  </div>
+  <h2 class="banner-title">
+    Possible values
+  </h2>
+  <table style="width:100%">
+    <tr>
+      <th>Value</th>
+      <th>Description</th>
+    </tr>
+    <tr *ngFor="let possibleValue of selectedManage.possibleValues">
+      <td>{{ possibleValue.value }}</td>
+      <td>{{ possibleValue.description }}</td>
+    </tr>
+  </table>
+
+  <button mat-stroked-button>
+    <mat-icon>add</mat-icon>
+    Add possible value
+  </button>
+</section>
